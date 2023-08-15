@@ -36,4 +36,31 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+    /**
+     * Indicate that the model's email address should be unverified.
+     */
+    public function approver(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'Approver',
+        ]);
+    }
+    /**
+     * Indicate that the model's email address should be unverified.
+     */
+    public function submitter(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'Submitter',
+        ]);
+    }
+    /**
+     * Indicate that the model's email address should be unverified.
+     */
+    public function administrator(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'Administrator',
+        ]);
+    }
 }
